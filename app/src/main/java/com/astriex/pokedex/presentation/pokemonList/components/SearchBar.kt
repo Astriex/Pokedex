@@ -37,7 +37,7 @@ fun SearchBar(
             maxLines = 1,
             singleLine = true,
             textStyle = TextStyle(color = Color.Black),
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .shadow(5.dp, CircleShape)
                 .background(color = Color.White, CircleShape)
@@ -50,7 +50,7 @@ fun SearchBar(
             Text(
                 text = hint,
                 color = Color.LightGray,
-                modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
+                modifier = modifier.padding(horizontal = 20.dp, vertical = 12.dp)
             )
         }
     }

@@ -2,7 +2,7 @@ package com.astriex.pokedex.di
 
 import com.astriex.pokedex.data.remote.PokeApi
 import com.astriex.pokedex.data.repository.PokemonRepositoryImpl
-import com.astriex.pokedex.domain.PokemonRepository
+import com.astriex.pokedex.domain.repository.PokemonRepository
 import com.astriex.pokedex.util.Constants
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.astriex.pokedex.domain
+package com.astriex.pokedex.domain.repository
 
 import com.astriex.pokedex.data.remote.dto.Pokemon
 import com.astriex.pokedex.data.remote.dto.PokemonList

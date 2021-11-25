@@ -3,7 +3,7 @@ package com.astriex.pokedex.data.repository
 import com.astriex.pokedex.data.remote.PokeApi
 import com.astriex.pokedex.data.remote.dto.Pokemon
 import com.astriex.pokedex.data.remote.dto.PokemonList
-import com.astriex.pokedex.domain.PokemonRepository
+import com.astriex.pokedex.domain.repository.PokemonRepository
 import com.astriex.pokedex.util.Resource
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
