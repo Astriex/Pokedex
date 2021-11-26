@@ -34,6 +34,10 @@ fun PokemonList(
         viewModel.isLoading
     }
 
+    val isSearching by remember {
+        viewModel.isSearching
+    }
+
     LazyColumn(contentPadding = PaddingValues(16.dp)) {
         // item in our list is a row with 2 entries, so itemCount counts the number of rows
         val itemCount = if (pokemonList.size % 2 == 0) {
@@ -42,18 +46,18 @@ fun PokemonList(
             pokemonList.size / 2 + 1
         }
         items(itemCount) {
-            if (it >= itemCount - 1 && !endReached) {
+            if (it >= itemCount - 1 && !endReached && !isLoading && !isSearching) {
                 viewModel.loadPokemonPaginated()
             }
             PokedexRow(rowIndex = it, entries = pokemonList, navController = navController)
         }
     }
-    
+
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        if(isLoading) {
+        if (isLoading) {
             CircularProgressIndicator(color = MaterialTheme.colors.primary)
         }
-        if(loadError.isNotEmpty()) {
+        if (loadError.isNotEmpty()) {
             RetrySection(error = loadError) {
                 viewModel.loadPokemonPaginated()
             }

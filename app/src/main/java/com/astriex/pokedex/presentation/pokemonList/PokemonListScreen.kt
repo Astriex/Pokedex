@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.astriex.pokedex.R
 import com.astriex.pokedex.presentation.pokemonList.components.PokemonList
@@ -16,7 +17,8 @@ import com.astriex.pokedex.presentation.pokemonList.components.SearchBar
 
 @Composable
 fun PokemonListScreen(
-    navController: NavController
+    navController: NavController,
+    viewModel: PokemonListViewModel = hiltViewModel()
 ) {
     Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
         Column {
@@ -34,7 +36,7 @@ fun PokemonListScreen(
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-
+                viewModel.searchPokemonList(it)
             }
             Spacer(modifier = Modifier.height(16.dp))
             PokemonList(navController = navController)
