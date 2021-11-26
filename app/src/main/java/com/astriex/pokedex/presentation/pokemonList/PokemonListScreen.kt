@@ -11,8 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.astriex.pokedex.R
-import com.astriex.pokedex.domain.model.PokedexListEntry
-import com.astriex.pokedex.presentation.pokemonList.components.PokedexEntry
+import com.astriex.pokedex.presentation.pokemonList.components.PokemonList
 import com.astriex.pokedex.presentation.pokemonList.components.SearchBar
 
 @Composable
@@ -37,14 +36,8 @@ fun PokemonListScreen(
             ) {
 
             }
-            PokedexEntry(
-                entry = PokedexListEntry(
-                    "huha",
-                    imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-                    1
-                ), navController = navController
-            )
-
+            Spacer(modifier = Modifier.height(16.dp))
+            PokemonList(navController = navController)
         }
     }
 }
