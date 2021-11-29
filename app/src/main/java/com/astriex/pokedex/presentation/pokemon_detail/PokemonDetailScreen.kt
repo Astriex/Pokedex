@@ -27,7 +27,7 @@ fun PokemonDetailScreen(
     dominantColor: Color,
     name: String,
     navController: NavController,
-    topPadding: Dp = 20.dp,
+    topPadding: Dp = 10.dp,
     imageSize: Dp = 200.dp,
     viewModel: PokemonDetailViewModel = hiltViewModel()
 ) {
@@ -38,7 +38,7 @@ fun PokemonDetailScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+            .background(dominantColor)
             .padding(bottom = 16.dp)
     ) {
         PokemonDetailTopSection(
